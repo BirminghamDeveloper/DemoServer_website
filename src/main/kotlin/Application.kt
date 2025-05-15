@@ -15,14 +15,11 @@ fun main(args: Array<String>) {
 fun Application.module() {
     configureRouting()
 }
-
 fun Application.module2(){
 //    install(CallLogging)
     routing {
-        static{
-            resource("facebook.html")
-            resource("static/file.txt")
-            resource("static/hani.jpeg")
+        static("assets"){
+            resource("static")
         }
         get("/book") {
             call.respondText("Hello, Books Sections")
